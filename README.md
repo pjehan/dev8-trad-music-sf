@@ -21,6 +21,14 @@ Installation de Maker Bundle (pour générer du code PHP) :
 composer require maker --dev
 ```
 
+### Mise en place de la base de données
+
+Installation de Doctrine :
+
+```shell
+composer require orm
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).
