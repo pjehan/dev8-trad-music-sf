@@ -59,6 +59,24 @@ Exécution des migrations :
 php bin/console doctrine:migrations:migrate
 ```
 
+Installer DoctrineFixturesBundle :
+
+```shell
+composer req --dev orm-fixtures
+```
+
+Créer les fixtures :
+
+```shell
+php bin/console make:fixture
+```
+
+Exécution des fixtures :
+
+```shell
+php bin/console doctrine:fixtures:load # php bin/console d:f:l
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).
@@ -79,6 +97,7 @@ Création de la base de données :
 php bin/console doctrine:database:drop --force
 php bin/console doctrine:database:create
 php bin/console doctrine:migrations:migrate
+php bin/console doctrine:fixtures:load
 ```
 
 OPTIONNEL : démarrer le serveur PHP (ou utiliser le serveur Apache de WAMP) :
