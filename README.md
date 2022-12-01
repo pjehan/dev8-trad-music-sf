@@ -29,12 +29,56 @@ Installation de Doctrine :
 composer require orm
 ```
 
+Création du fichier .env.local :
+
+```dotenv
+DATABASE_URL="mysql://root:@127.0.0.1:3306/trad_music_sf?serverVersion=5.7&charset=utf8mb4"
+```
+
+Création de la base de données :
+
+```shell
+php bin/console doctrine:database:create
+```
+
+Création des entités :
+
+```shell
+php bin/console make:entity
+```
+
+Création des fichiers de migration :
+
+```shell
+php bin/console make:migration
+```
+
+Exécution des migrations :
+
+```shell
+php bin/console doctrine:migrations:migrate
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).
 
 ```shell
 composer install
+```
+
+Création du fichier .env.local :
+
+```dotenv
+DATABASE_URL="mysql://root:@127.0.0.1:3306/trad_music_sf?serverVersion=5.7&charset=utf8mb4"
+```
+
+Création de la base de données :
+
+```shell
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+php bin/console doctrine:migrations:migrate
 ```
 
 OPTIONNEL : démarrer le serveur PHP (ou utiliser le serveur Apache de WAMP) :
