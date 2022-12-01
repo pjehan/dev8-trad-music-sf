@@ -77,6 +77,20 @@ Exécution des fixtures :
 php bin/console doctrine:fixtures:load # php bin/console d:f:l
 ```
 
+### Création d'une nouvelle page
+
+Création d'un controller :
+
+```shell
+php bin/console make:controller
+```
+
+Installation de Twig :
+
+```shell
+composer require twig
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).
