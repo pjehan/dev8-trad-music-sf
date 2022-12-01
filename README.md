@@ -8,7 +8,7 @@ Générer le projet Symfony :
 composer create-project symfony/skeleton:"6.1.*" trad-music-sf
 ```
 
-OPTIONNEL si on veut la totale (Doctrine, Twig, Security...) :
+OPTIONNEL : si on veut la totale (Doctrine, Twig, Security...) :
 
 ```shell
 cd trad-music-sf
@@ -22,4 +22,10 @@ Faire un fork du projet puis le cloner (git clone URL).
 
 ```shell
 composer install
+```
+
+OPTIONNEL : démarrer le serveur PHP (ou utiliser le serveur Apache de WAMP) :
+
+```shell
+php -S localhost:8000 -t public/
 ```
