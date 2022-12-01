@@ -15,6 +15,11 @@ cd trad-music-sf
 composer require webapp
 ```
 
+Installation de Maker Bundle (pour générer du code PHP) :
+
+```shell
+composer require maker --dev
+```
 
 ## Installation du projet
 
