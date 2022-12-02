@@ -21,6 +21,15 @@ Installation de Maker Bundle (pour générer du code PHP) :
 composer require maker --dev
 ```
 
+Installation du profiler (barre de debug de Symfony) :
+
+```shell
+composer require profiler debug --dev
+```
+
+Cela permet d'avoir le profiler (debug bar) de Symfony et de pouvoir
+utiliser la fonction dump() dans les controlleurs ou les fichiers Twig.
+
 ### Mise en place de la base de données
 
 Installation de Doctrine :
@@ -46,6 +55,11 @@ Création des entités :
 ```shell
 php bin/console make:entity
 ```
+
+La commande précédente permet de créer l'entité (classe PHP qui sera
+liée à une table en base de données par exemple instrument). Elle permet
+également de générer le repository (une classe qui va permettre de faire
+des requêtes SQL sur la table instrument).
 
 Création des fichiers de migration :
 
@@ -78,6 +92,12 @@ php bin/console doctrine:fixtures:load # php bin/console d:f:l
 ```
 
 ### Création d'une nouvelle page
+
+OPTIONNEL : Installation de apache-pack (si on passe par WAMP) :
+
+```shell
+composer require symfony/apache-pack
+```
 
 Création d'un controller :
 

@@ -2,4 +2,12 @@
 
 {% block body %}
     <h1>Accueil</h1>
+
+    {# <?php foreach ($instruments as $instrument): ?> #}
+
+    {# Boucler sur la liste des instruments #}
+    {% for instrument in instruments %}
+        {{ instrument.name }}
+    {% endfor %}
+
 {% endblock %}
