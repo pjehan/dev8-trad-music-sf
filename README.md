@@ -61,6 +61,12 @@ liée à une table en base de données par exemple instrument). Elle permet
 également de générer le repository (une classe qui va permettre de faire
 des requêtes SQL sur la table instrument).
 
+ATTENTION ! Pour l'entité User, utiliser la commande :
+
+```shell
+php bin/console make:user
+```
+
 Création des fichiers de migration :
 
 ```shell
@@ -99,17 +105,20 @@ OPTIONNEL : Installation de apache-pack (si on passe par WAMP) :
 composer require symfony/apache-pack
 ```
 
+Installation de Twig :
+
+```shell
+composer require twig
+```
+
 Création d'un controller :
 
 ```shell
 php bin/console make:controller
 ```
 
-Installation de Twig :
-
-```shell
-composer require twig
-```
+TODO: Comment récupérer les données de la base de données dans un 
+controlleur.
 
 ## Installation du projet
 

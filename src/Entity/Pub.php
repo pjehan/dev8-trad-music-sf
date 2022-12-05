@@ -33,6 +33,10 @@ class Pub
     #[ORM\OneToMany(mappedBy: 'pub', targetEntity: Gig::class, orphanRemoval: true)]
     private Collection $gigs;
 
+    #[ORM\ManyToOne(inversedBy: 'pubs')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Manager $manager = null;
+
     public function __construct()
     {
         $this->gigs = new ArrayCollection();
@@ -129,6 +133,18 @@ class Pub
                 $gig->setPub(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getManager(): ?Manager
+    {
+        return $this->manager;
+    }
+
+    public function setManager(?Manager $manager): self
+    {
+        $this->manager = $manager;
 
         return $this;
     }
