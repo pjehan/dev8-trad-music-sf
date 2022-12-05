@@ -143,6 +143,12 @@ php bin/console doctrine:migrations:migrate
 php bin/console doctrine:fixtures:load
 ```
 
+Générer les fichiers assets :
+
+```shell
+npm run watch
+```
+
 OPTIONNEL : démarrer le serveur PHP (ou utiliser le serveur Apache de WAMP) :
 
 ```shell
