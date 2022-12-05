@@ -1,0 +1,26 @@
+@use "variables";
+
+// Breakpoints
+@mixin sm {
+  @media (min-width: #{variables.$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{variables.$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{variables.$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{variables.$screen-xl-min}) {
+    @content;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../sass-utils/variables";
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  border-radius: 0.25rem;
+  text-decoration: none;
+
+  &.badge-primary {
+    background-color: variables.$primary;
+    color: variables.$white;
+  }
+}

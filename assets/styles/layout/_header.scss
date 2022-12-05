@@ -1,0 +1,10 @@
+@use '../sass-utils/variables';
+
+.site-header {
+  background-color: variables.$primary;
+  color: variables.$white;
+
+  a {
+    color: variables.$white;
+  }
+}

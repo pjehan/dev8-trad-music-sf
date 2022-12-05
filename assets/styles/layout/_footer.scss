@@ -1,0 +1,6 @@
+@use "../sass-utils/variables";
+
+.site-footer {
+    margin-top: 2rem;
+    background-color: variables.$light;
+}
