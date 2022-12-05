@@ -24,7 +24,7 @@ class MusicianFixtures extends Fixture implements DependentFixtureInterface
         $john->setPassword($this->hasher->hashPassword($john, 'john'));
         $john->setFirstName('John');
         $john->setLastName('Doe');
-        $john->addInstrument($this->getReference('instrument-flute'));
+        $john->addInstrument($this->getReference('instrument-guitar'));
         $john->setRoles(['USER_MUSICIAN']);
         $manager->persist($john);
         $this->addReference('musician-john', $john);

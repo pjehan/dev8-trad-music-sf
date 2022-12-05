@@ -1,13 +1,69 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Accueil</h1>
+    <section class="container">
+        <h1>Accueil</h1>
+    </section>
 
-    {# <?php foreach ($instruments as $instrument): ?> #}
+    <section class="container">
+        <h2>Next gigs in town</h2>
 
-    {# Boucler sur la liste des instruments #}
-    {% for instrument in instruments %}
-        {{ instrument.name }}
-    {% endfor %}
+        <div class="grid">
+            <article class="card">
+                <img src="uploads/gigs/oconnell.jpg" alt="O'Connell's">
+                <h3>O'Connell's</h3>
+                <time datetime="2022-12-10 20:30">Monday 12nd of december at 8:30 pm</time>
+                <a href="#" class="btn btn-primary">See more</a>
+            </article>
+            <article class="card">
+                <img src="uploads/gigs/templebar.jpg" alt="Temple bar">
+                <h3>Temple bar</h3>
+                <time datetime="2022-12-10 20:30">Sunday 18th of december at 9:00 pm</time>
+                <a href="#" class="btn btn-primary">See more</a>
+            </article>
+            <article class="card">
+                <img src="uploads/gigs/mulligans.jpg" alt="Mulligan's">
+                <h3>Mulligan's</h3>
+                <time datetime="2022-12-10 20:30">Sunday 18th of december at 9:15 pm</time>
+                <a href="#" class="btn btn-primary">See more</a>
+            </article>
+            <article class="card">
+                <img src="uploads/gigs/thebrazenhead.jpg" alt="The Brazen Head">
+                <h3>The Brazen Head</h3>
+                <time datetime="2022-12-10 20:30">Tuesday 22nd of december at 7:30 pm</time>
+                <a href="#" class="btn btn-primary">See more</a>
+            </article>
+        </div>
+    </section>
+
+    {# <?php foreach ($musicians as $musician): ?> #}
+
+    {# Boucler sur la liste des musiciens #}
+    <section class="container">
+        <h2>Available musicians</h2>
+
+        <div class="grid">
+
+            {% for musician in musicians %}
+                <article class="card">
+                    <img src="{{ asset('uploads/' ~ musician.image) }}" alt="{{ musician.fullName }}">
+                    <h3>{{ musician.fullName }}</h3>
+                    <ul class="badge-list">
+                        {% for instrument in musician.instruments %}
+                            <li>
+                                <a href="#" class="badge badge-primary">
+                                    {% if instrument.icon %}
+                                        <i class="{{ instrument.icon }}"></i>
+                                    {% endif %}
+                                    {{ instrument.name }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </article>
+            {% endfor %}
+
+        </div>
+    </section>
 
 {% endblock %}
