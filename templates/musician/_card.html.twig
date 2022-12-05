@@ -1,5 +1,7 @@
 <article class="card">
-    <img src="{{ asset('uploads/' ~ musician.image) }}" alt="{{ musician.fullName }}">
+    <a href="{{ path('musician_detail', {'id': musician.id}) }}">
+        <img src="{{ asset('uploads/' ~ musician.image) }}" alt="{{ musician.fullName }}">
+    </a>
     <h3>{{ musician.fullName }}</h3>
     <ul class="badge-list">
         {% for instrument in musician.instruments %}
