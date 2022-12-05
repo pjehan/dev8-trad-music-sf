@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Musicians{% endblock %}
+
+{% block body %}
+
+    <section class="container">
+        <h1>Musicians list</h1>
+
+        <div class="grid">
+
+            {% for musician in musicians %}
+                {# Inclure le fichier musician/_card.html.twig en envoyant la variable musician (et uniquement musician) #}
+                {% include 'musician/_card.html.twig' with {'musician': musician} only %}
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}
