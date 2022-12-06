@@ -17,10 +17,16 @@ class MusicianController extends AbstractController
         ]);
     }
 
-    #[Route('/musician/{id}', name: 'musician_detail')]
+    #[Route('/musician/{id}', name: 'musician_detail', requirements: ['id' => '\d+'])]
     public function detail(int $id, MusicianRepository $musicianRepository): Response
     {
         $musician = $musicianRepository->find($id);
+
+        // Si le musicien n'existe pas en base de données on retourne une erreur 404
+        if ($musician === null) {
+            throw $this->createNotFoundException();
+        }
+
         return $this->render('musician/detail.html.twig', ['musician' => $musician]);
     }
 }
