@@ -16,7 +16,7 @@
                     <time datetime="{{ gig.dateStart|date('Y-m-d h:i') }}">
                         {{ gig.dateStart|date('l jS \\o\\f F \\a\\t g:i a') }}
                     </time>
-                    <a href="#" class="btn btn-primary">See more</a>
+                    <a href="{{ path('gig_detail', {'id': gig.id}) }}" class="btn btn-primary">See more</a>
                 </article>
             {% endfor %}
         </div>

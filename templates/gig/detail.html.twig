@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ gig.pub.name }} {{ gig.dateStart|date('Y-m-d') }}{% endblock %}
+
+{% block body %}
+    <h1>{{ gig.pub.name }} {{ gig.dateStart|date('Y-m-d') }}</h1>
+
+    <h2>Participants list</h2>
+
+    <ul>
+        {% for participant in gig.participants %}
+            <li>
+                {{ participant.instrument.name }}
+                {# On affiche le nom du musicien uniquement s'il y en a un #}
+                {% if participant.musician %}
+                    {{ participant.musician.fullName }}
+                {% else %}
+                    Aucun participant
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
