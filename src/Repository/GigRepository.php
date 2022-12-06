@@ -39,6 +39,21 @@ class GigRepository extends ServiceEntityRepository
         }
     }
 
+    public function findFuture(int $limit = 4): array
+    {
+        // SELECT * FROM gig WHERE date_start > NOW() ORDER BY date_start ASC LIMIT 4
+        return $this->createQueryBuilder('gig')
+            ->addSelect('pub')
+            ->join('gig.pub', 'pub') // INNER JOIN pub ON pub.id = gig.pub_id
+            ->where('gig.dateStart > :today')
+            ->orderBy('gig.dateStart', 'ASC')
+            ->setMaxResults($limit)
+            ->setParameter(':today', new \DateTime())
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Gig[] Returns an array of Gig objects
 //     */

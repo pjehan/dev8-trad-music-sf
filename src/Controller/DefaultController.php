@@ -15,7 +15,7 @@ class DefaultController extends AbstractController
     {
         // Récupérer la liste des musiciens en base de données (SELECT * FROM musician)
         $musicians = $musicianRepository->findAll();
-        $gigs = $gigRepository->findAll();
+        $gigs = $gigRepository->findFuture();
 
         // Appel le fichier de template Twig avec la méthode render
         return $this->render('default/homepage.html.twig', [
