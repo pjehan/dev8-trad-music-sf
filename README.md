@@ -192,6 +192,22 @@ Faire un lien vers la page de connexion :
 php bin/console make:registration-form
 ```
 
+#### Créer la déconnexion
+
+Ajouter ces lignes dans le fichier config/packages/security.yaml
+dans le firewall main :
+```yaml
+logout:
+    path: app_logout
+```
+
+Ajouter ces lignes dans le fichier config/routes.yaml :
+```yaml
+app_logout:
+    path: /logout
+    methods: GET
+```
+
 ### Gérer l'upload d'image
 
 ```shell
