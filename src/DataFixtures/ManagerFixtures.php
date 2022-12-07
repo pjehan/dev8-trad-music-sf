@@ -21,28 +21,28 @@ class ManagerFixtures extends Fixture
         $oconnellsManager = new Manager();
         $oconnellsManager->setEmail('manager@oconnells.com');
         $oconnellsManager->setPassword($this->hasher->hashPassword($oconnellsManager, 'oconnells'));
-        $oconnellsManager->setRoles(['USER_MANAGER']);
+        $oconnellsManager->setRoles(['ROLE_MANAGER']);
         $manager->persist($oconnellsManager);
         $this->addReference('manager-oconnells', $oconnellsManager);
 
         $templebarManager = new Manager();
         $templebarManager->setEmail('manager@templebar.com');
         $templebarManager->setPassword($this->hasher->hashPassword($templebarManager, 'templebar'));
-        $templebarManager->setRoles(['USER_MANAGER']);
+        $templebarManager->setRoles(['ROLE_MANAGER']);
         $manager->persist($templebarManager);
         $this->addReference('manager-templebar', $templebarManager);
 
         $thebrazenheadManager = new Manager();
         $thebrazenheadManager->setEmail('manager@thebrazenhead.com');
         $thebrazenheadManager->setPassword($this->hasher->hashPassword($thebrazenheadManager, 'thebrazenhead'));
-        $thebrazenheadManager->setRoles(['USER_MANAGER']);
+        $thebrazenheadManager->setRoles(['ROLE_MANAGER']);
         $manager->persist($thebrazenheadManager);
         $this->addReference('manager-thebrazenhead', $thebrazenheadManager);
 
         $mulligansManager = new Manager();
         $mulligansManager->setEmail('manager@mulligans.com');
         $mulligansManager->setPassword($this->hasher->hashPassword($mulligansManager, 'mulligans'));
-        $mulligansManager->setRoles(['USER_MANAGER']);
+        $mulligansManager->setRoles(['ROLE_MANAGER']);
         $manager->persist($mulligansManager);
         $this->addReference('manager-mulligans', $mulligansManager);
 

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pub index{% endblock %}
+
+{% block body %}
+    <h1>Pub index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Address</th>
+                <th>ZipCode</th>
+                <th>City</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pub in pubs %}
+            <tr>
+                <td>{{ pub.id }}</td>
+                <td>{{ pub.name }}</td>
+                <td>{{ pub.image }}</td>
+                <td>{{ pub.address }}</td>
+                <td>{{ pub.zipCode }}</td>
+                <td>{{ pub.city }}</td>
+                <td>
+                    <a href="{{ path('app_pub_show', {'id': pub.id}) }}">show</a>
+                    <a href="{{ path('app_pub_edit', {'id': pub.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pub_new') }}">Create new</a>
+{% endblock %}

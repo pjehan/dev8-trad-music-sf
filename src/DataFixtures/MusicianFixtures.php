@@ -25,7 +25,7 @@ class MusicianFixtures extends Fixture implements DependentFixtureInterface
         $john->setFirstName('John');
         $john->setLastName('Doe');
         $john->addInstrument($this->getReference('instrument-guitar'));
-        $john->setRoles(['USER_MUSICIAN']);
+        $john->setRoles(['ROLE_MUSICIAN']);
         $manager->persist($john);
         $this->addReference('musician-john', $john);
 
@@ -35,7 +35,7 @@ class MusicianFixtures extends Fixture implements DependentFixtureInterface
         $sean->setFirstName('Sean');
         $sean->setLastName('O\'Broin');
         $sean->setImage('sean-obroin.jpeg');
-        $sean->setRoles(['USER_MUSICIAN']);
+        $sean->setRoles(['ROLE_MUSICIAN']);
         $sean->addInstrument($this->getReference('instrument-flute'));
         $manager->persist($sean);
         $this->addReference('musician-sean', $sean);
@@ -48,7 +48,7 @@ class MusicianFixtures extends Fixture implements DependentFixtureInterface
         $gavin->setImage('gavin-pennycook.jpg');
         $gavin->addInstrument($this->getReference('instrument-flute'));
         $gavin->addInstrument($this->getReference('instrument-fiddle'));
-        $gavin->setRoles(['USER_MUSICIAN']);
+        $gavin->setRoles(['ROLE_MUSICIAN']);
         $manager->persist($gavin);
         $this->addReference('musician-gavin', $gavin);
 

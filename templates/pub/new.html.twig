@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pub{% endblock %}
+
+{% block body %}
+    <h1>Create new Pub</h1>
+
+    {{ include('pub/_form.html.twig') }}
+
+    <a href="{{ path('app_pub_index') }}">back to list</a>
+{% endblock %}
