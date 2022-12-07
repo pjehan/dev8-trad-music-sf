@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Instrument;
 use App\Entity\Musician;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -22,6 +24,12 @@ class RegistrationFormType extends AbstractType
             ->add('lastName')
             ->add('image', FileType::class, [
                 'attr' => ['accept' => 'image/*']
+            ])
+            ->add('instruments', EntityType::class, [
+                'class' => Instrument::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true
             ])
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
