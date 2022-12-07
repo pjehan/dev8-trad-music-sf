@@ -192,6 +192,12 @@ Faire un lien vers la page de connexion :
 php bin/console make:registration-form
 ```
 
+### Gérer l'upload d'image
+
+```shell
+composer require symfony/mime
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).

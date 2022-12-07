@@ -6,6 +6,7 @@ use App\Repository\MusicianRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MusicianRepository::class)]
 class Musician extends User
@@ -17,6 +18,7 @@ class Musician extends User
     private ?string $lastName = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Assert\Image]
     private ?string $image = null;
 
     #[ORM\ManyToMany(targetEntity: Instrument::class, inversedBy: 'musicians')]
