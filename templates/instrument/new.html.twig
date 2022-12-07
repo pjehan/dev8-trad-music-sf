@@ -4,6 +4,26 @@
 
 {% block body %}
 
-    {{ form(form) }}
+    <section class="container">
+        <h1>Create new instrument</h1>
+
+        {# Générer la balise <form> (balise ouvrante) #}
+        {{ form_start(form) }}
+
+            {# Décomposer l'affichage du formulaire #}
+            <div class="form-row">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name) }}
+            </div>
+
+            {# Générer l'ensemble des champs du formulaire #}
+            {{ form_widget(form) }}
+
+            <button type="submit">Enregistrer</button>
+
+        {# Générer la balise </form> (balise fermante) #}
+        {{ form_end(form) }}
+
+    </section>
 
 {% endblock %}
