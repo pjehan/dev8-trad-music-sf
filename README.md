@@ -120,6 +120,14 @@ php bin/console make:controller
 TODO: Comment récupérer les données de la base de données dans un 
 controlleur.
 
+### Gestion de l'authentification
+
+#### Créer le formulaire de création de compte
+
+```shell
+php bin/console make:registration-form
+```
+
 ## Installation du projet
 
 Faire un fork du projet puis le cloner (git clone URL).
