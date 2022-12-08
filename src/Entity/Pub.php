@@ -30,6 +30,9 @@ class Pub
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $city = null;
 
+    #[ORM\Column]
+    private ?\DateTimeImmutable $createdAt = null;
+
     #[ORM\OneToMany(mappedBy: 'pub', targetEntity: Gig::class, orphanRemoval: true)]
     private Collection $gigs;
 
@@ -103,6 +106,18 @@ class Pub
     public function setCity(?string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }
