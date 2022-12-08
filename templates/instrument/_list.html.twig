@@ -1,7 +1,9 @@
 <ul>
     {% for instrument in instruments %}
         <li>
-            {{ instrument.name }}
+            <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}">
+                {{ instrument.name }}
+            </a>
         </li>
     {% endfor %}
 </ul>

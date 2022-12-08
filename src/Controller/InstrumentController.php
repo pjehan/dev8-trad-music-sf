@@ -45,6 +45,12 @@ class InstrumentController extends AbstractController
         ]);
     }
 
+    #[Route('/instrument/{id}', name: 'app_instrument_show', requirements: ['id' => '\d+'], methods: ['GET'])]
+    public function show(Instrument $instrument): Response
+    {
+        return $this->render('instrument/show.html.twig', ['instrument' => $instrument]);
+    }
+
     /**
      * Méthode qui permet d'afficher la liste des instruments.
      * Cette méthode sera appelée en Twig avec render(controller())

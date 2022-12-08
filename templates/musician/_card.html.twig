@@ -6,7 +6,7 @@
     <ul class="badge-list">
         {% for instrument in musician.instruments %}
             <li>
-                <a href="#" class="badge badge-primary">
+                <a href="{{ path('app_instrument_show', {'id': instrument.id}) }}" class="badge badge-primary">
                     {% if instrument.icon %}
                         <i class="{{ instrument.icon }}"></i>
                     {% endif %}
