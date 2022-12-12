@@ -220,6 +220,7 @@ Faire un fork du projet puis le cloner (git clone URL).
 
 ```shell
 composer install
+npm install
 ```
 
 Création du fichier .env.local :
